@@ -1,0 +1,15 @@
+setuid = stunnel
+setgid = stunnel
+
+pid = /var/run/stunnel/stunnel.pid
+output = /var/log/stunnel/stunnel.log
+
+client = yes
+verify = 0
+foreground = yes
+
+[tls]
+accept = ${STUNNEL_ACCEPT}
+sni = ${SNI}
+connect = ${STUNNEL_CONNECT}
+
