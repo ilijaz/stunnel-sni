@@ -2,7 +2,7 @@
 
 export STUNNEL_CONF="/etc/stunnel/stunnel.conf"
 export STUNNEL_DEBUG="${STUNNEL_DEBUG:-7}"
-export SNI="echo ${STUNNEL_CONNECT} | sed -e 's,\(.*\):\(.*\),\1,g'"
+[[ -z "${SNI}" ]] && export SNI="echo ${STUNNEL_CONNECT} | sed -e 's,\(.*\):\(.*\),\1,g'"
 
 if [[ -z "${STUNNEL_ACCEPT}" ]] || [[ -z "${STUNNEL_CONNECT}" ]]; then
     echo >&2 "one or more values missing: "
